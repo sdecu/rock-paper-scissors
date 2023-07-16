@@ -4,7 +4,7 @@ create function for single round of rps with 2 parameters: playerSelection, comp
 and returns statement for lose or win
 make playerSelection caseINsensitive
 write funciont called game()to run 5 rounds of rps to determine winner */
-let playerSelection = prompt("rock, paper, or scissors?")
+const playerSelection = prompt("rock, paper, or scissors?")
 
 const choice = ["rock", "paper", "scissors"]
 
@@ -22,6 +22,25 @@ function getComputerChoice(ch)    {
 const computerSelection = getComputerChoice(choice)
 console.log(computerSelection)
 
-/*if playerSelection === 'rock' & & computerSelection = 'scissors'  {
-    return "congrats you won this round!"
-} */
+function    playRound(playerSelection, computerSelection)   {
+   if (playerSelection === 'rock' && computerSelection === 'scissors')  {
+  return "congrats you won this round!";
+}  else if (playerSelection === 'scissors' && computerSelection === 'paper')  {
+    return "congrats you won this round!";
+}  else if (playerSelection === 'paper' && computerSelection === 'rock')  {
+    return "congrats you won this round!";
+}  else if (playerSelection === 'rock' && computerSelection === 'paper')  {
+    return "you lost good luck next time";
+}  else if (playerSelection === 'scissors' && computerSelection === 'rock')  {
+    return "you lost good luck next time";
+}  else if (playerSelection === 'paper' && computerSelection === 'scissors')  {
+    return "you lost good luck next time";
+}  else if (playerSelection = computerSelection)  {
+    return "tie"
+}
+else {
+    return "huh"
+}
+}
+
+console.log(playRound(playerSelection, computerSelection))
