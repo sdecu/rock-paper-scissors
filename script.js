@@ -4,9 +4,9 @@ create function for single round of rps with 2 parameters: playerSelection, comp
 and returns statement for lose or win
 make playerSelection caseINsensitive
 write funciont called game()to run 5 rounds of rps to determine winner */
-const playerResult = prompt("rock, paper, or scissors?")
+let playerResult = prompt("rock, paper, or scissors?")
 
-const playerSelection = playerResult.toLowerCase()
+let playerSelection = playerResult.toLowerCase()
 
 const choice = ["rock", "paper", "scissors"]
 
@@ -25,24 +25,29 @@ const computerSelection = getComputerChoice(choice)
 console.log(computerSelection)
 
 function    playRound(playerSelection, computerSelection)   {
-   if (playerSelection === 'rock' && computerSelection === 'scissors')  {
+   if (playerSelection === 'rock' && computerSelection === 'scissors' || 
+   playerSelection === 'scissors' && computerSelection === 'paper' ||
+   playerSelection === 'paper' && computerSelection === 'rock')    {
   return "congrats you won this round!";
-}  else if (playerSelection === 'scissors' && computerSelection === 'paper')  {
-    return "congrats you won this round!";
-}  else if (playerSelection === 'paper' && computerSelection === 'rock')  {
-    return "congrats you won this round!";
-}  else if (playerSelection === 'rock' && computerSelection === 'paper')  {
-    return "you lost good luck next time";
-}  else if (playerSelection === 'scissors' && computerSelection === 'rock')  {
-    return "you lost good luck next time";
-}  else if (playerSelection === 'paper' && computerSelection === 'scissors')  {
+   }  else if (playerSelection === 'rock' && computerSelection === 'paper'||
+    playerSelection === 'scissors' && computerSelection === 'rock' ||
+    playerSelection === 'paper' && computerSelection === 'scissors')   {
     return "you lost good luck next time";
 }  else if (playerSelection = computerSelection)  {
     return "tie"
-}
-else {
+}   else {
+
     return "invalid input"
 }
 }
 
+let round = 0
+
+for (let i = 0; i < 9; i++) {
+    round = round + i;
+  }
+
+
 console.log(playRound(playerSelection, computerSelection))
+
+// input on html and playerresult = documentqueryselector instead of prompt??????
