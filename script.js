@@ -30,24 +30,23 @@ function getComputerChoice()  {
   }
 
 function  getPlayerSelection() {
-  prompt('rock paper scissors?', 'rock')
+  return prompt('rock paper scissors?', 'rock')
 }
 
 function playRound(playerSelection, computerSelection)  {
   playerSelection = getPlayerSelection();
   computerSelection = getComputerChoice();
-
-  if (playerSelection == 'rock' && computerSelection == 'scissors' || 
-    playerSelection == 'scissors' && computerSelection == 'paper' || 
-    playerSelection == 'paper' && computerSelection == 'rock')  {
+  if (playerSelection === 'rock' && computerSelection === 'scissors' || 
+  playerSelection === 'scissors' && computerSelection === 'paper' || 
+  playerSelection === 'paper' && computerSelection === 'rock')  {
       return 'win'
-    } else if (playerSelection == 'rock' && computerSelection == 'paper' || 
-      playerSelection == 'paper' && computerSelection == 'scissors' || 
-      playerSelection == 'scissors' && computerSelection == 'paper')  {
+    } else if (playerSelection === 'rock' && computerSelection === 'paper' || 
+      playerSelection === 'paper' && computerSelection === 'scissors' || 
+      playerSelection === 'scissors' && computerSelection === 'paper')  {
         return 'lose'
       } else if   (playerSelection == computerSelection)  {
         return 'tie'
-      }
+      } else return playerSelection
 }
 
 console.log(getComputerChoice())
