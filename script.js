@@ -30,7 +30,7 @@ function getComputerChoice()  {
   }
 
 function  getPlayerSelection() {
-  return prompt('rock paper scissors?', 'rock')
+  return prompt('rock paper scissors?', 'rock').toLowerCase()
 }
 
 function playRound(playerSelection, computerSelection)  {
