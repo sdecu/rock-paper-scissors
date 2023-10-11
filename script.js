@@ -42,11 +42,11 @@ function playRound(playerSelection, computerSelection)  {
   if (playerSelection === 'rock' && computerSelection === 'scissors' || 
   playerSelection === 'scissors' && computerSelection === 'paper' || 
   playerSelection === 'paper' && computerSelection === 'rock')  {
-      return playerScore++ && 'win'
+      return ++playerScore && console.log('win');
     } else if (playerSelection === 'rock' && computerSelection === 'paper' || 
       playerSelection === 'paper' && computerSelection === 'scissors' || 
       playerSelection === 'scissors' && computerSelection === 'paper')  {
-        return compScore++ && 'lose'
+        return ++compScore && console.log('lose');
       } else if   (playerSelection == computerSelection)  {
         return 'tie'
       } else return 'invalid input'
@@ -60,14 +60,15 @@ function game()  {
   console.log(playRound());
   console.log(playRound());
   if (playerScore > compScore)  {
-    console.log('you won')
-  } else if (compScore < playerScore) {
-    console.log('you lose')
-  } else if (compScore == playerScore) {
-    console.log('you tie')
-  }
+      console.log('you won')
+    } else if (compScore > playerScore) {
+      console.log('you lose')
+    } else if (compScore == playerScore) {
+      console.log('you tie')
+    }
 }
+  
 
-console.log(getComputerChoice())
+
 console.log(game())
 // input on html and playerresult = documentqueryselector instead of prompt??????
