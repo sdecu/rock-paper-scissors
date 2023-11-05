@@ -4,20 +4,17 @@ create function for single round of rps with 2 parameters: playerSelection, comp
 and returns statement for lose or win
 make playerSelection caseINsensitive
 write funciont called game()to run 5 rounds of rps to determine winner */
+const rock = document.createElement('button');
+const paper = document.createElement('button');
+const scissors = document.createElement('button');
 
-function nll(n)  {
-  n = randNum()
-  switch(n) {
-  case n < 3:
-    return 'rock';
-    break;
-    case n > 6:
-      return 'paper';
-      break;
-    default:
-      return 'scissors';
-    }
-}
+rock.textContent = 'rock';
+paper.textContent = 'paper';
+scissors.textContent = 'scissors';
+
+document.body.append(rock, paper, scissors);
+document.body.style.backgroundColor = 'dimgrey';
+
 
 function getComputerChoice()  {
   i = Math.floor(Math.random() * 9)
@@ -53,7 +50,7 @@ function playRound(playerSelection, computerSelection)  {
 }
 
 
-function game()  {
+/*function game()  {
   console.log(playRound());
   console.log(playRound());
   console.log(playRound());
@@ -67,7 +64,7 @@ function game()  {
       console.log('you tie')
     }
 }
-  
+  */
 
 
 console.log(game())
