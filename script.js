@@ -23,19 +23,39 @@ function  getPlayerSelection() {
 let playerScore = 0;
 let compScore = 0;
 
-function playRound(playerSelection, computerSelection)  {
-  //playerSelection = getPlayerSelection();
+function playRock(playerSelection, computerSelection)  {
+  playerSelection = 'rock';
   computerSelection = getComputerChoice();
-  if (playerSelection === 'rock' && computerSelection === 'scissors' || 
-  playerSelection === 'scissors' && computerSelection === 'paper' || 
-  playerSelection === 'paper' && computerSelection === 'rock')  {
+  if (computerSelection === 'scissors')  {
       return ++playerScore && console.log('win');
-    } else if (playerSelection === 'rock' && computerSelection === 'paper' || 
-      playerSelection === 'paper' && computerSelection === 'scissors' || 
-      playerSelection === 'scissors' && computerSelection === 'paper')  {
+    } else if (computerSelection === 'paper')  {
         return ++compScore && console.log('lose');
       } else if   (playerSelection == computerSelection)  {
-        return 'tie'
+        return 'tie' && console.log('tie')
+      } else return 'invalid input'
+}
+
+function playPaper(playerSelection, computerSelection)  {
+  playerSelection = 'paper';
+  computerSelection = getComputerChoice();
+  if (computerSelection === 'rock')  {
+      return ++playerScore && console.log('win');
+    } else if (computerSelection === 'scissors')  {
+        return ++compScore && console.log('lose');
+      } else if   (playerSelection == computerSelection)  {
+        return 'tie' && console.log('tie')
+      } else return 'invalid input'
+}
+
+function playScissors(playerSelection, computerSelection)  {
+  playerSelection = 'scissors';
+  computerSelection = getComputerChoice();
+  if (computerSelection === 'paper')  {
+      return ++playerScore && console.log('win');
+    } else if (computerSelection === 'rock')  {
+        return ++compScore && console.log('lose');
+      } else if   (playerSelection == computerSelection)  {
+        return 'tie' && console.log('tie')
       } else return 'invalid input'
 }
 
@@ -50,9 +70,9 @@ scissors.textContent = 'scissors';
 document.body.append(rock, paper, scissors);
 document.body.style.backgroundColor = 'dimgrey';
 
-rock.addEventListener('click', playRound);
-paper.addEventListener('click', playRound);
-scissors.addEventListener('click', playRound);
+rock.addEventListener('click', playRock);
+paper.addEventListener('click', playPaper);
+scissors.addEventListener('click', playScissors);
 
 /*function game()  {
   console.log(playRound());
