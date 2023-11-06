@@ -7,11 +7,11 @@ write funciont called game()to run 5 rounds of rps to determine winner */
 
 
 function getComputerChoice()  {
-  i = Math.floor(Math.random() * 9)
-  if (i <= 3) {
+  i = Math.floor(Math.random() * 3)
+  if (i = 0) {
     return 'rock'
   } else
-    if  (i >= 6)  {
+    if  (i = 1)  {
       return 'paper'
     } else return 'scissors'
   }
@@ -117,6 +117,6 @@ scissors.addEventListener('click', playScissors);
     }
 }
   */
-
+console.log(getComputerChoice())
 
 // input on html and playerresult = documentqueryselector instead of prompt??????
