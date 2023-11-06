@@ -26,18 +26,18 @@ let compScore = 0;
 function playRock(playerSelection, computerSelection)  {
   playerSelection = 'rock';
   computerSelection = getComputerChoice();
-  if (computerSelection === 'scissors')  {
+if (playerScore == 10)  {
+    winner.innerText = 'You Win!'
+  } else if (compScore == 10) {
+    winner.innerText = 'You Lose!'
+  } else if (computerSelection === 'scissors')  {
       ++playerScore;
     } else if (computerSelection === 'paper')  {
          ++compScore;
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
-  if (playerScore == 10)  {
-    winner.innerText = 'You Win!'
-  } else if (compScore == 10) {
-    winner.innerText = 'You Lose!'
-  }
+  
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
@@ -45,18 +45,18 @@ function playRock(playerSelection, computerSelection)  {
 function playPaper(playerSelection, computerSelection)  {
   playerSelection = 'paper';
   computerSelection = getComputerChoice();
-  if (computerSelection === 'rock')  {
+  if (playerScore == 10)  {
+      winner.innerText = 'You Win!'
+    } else if (compScore == 10) {
+      winner.innerText = 'You Lose!'
+    } else if (computerSelection === 'rock')  {
       ++playerScore;
     } else if (computerSelection === 'scissors')  {
         ++compScore 
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
-  if (playerScore == 10)  {
-    winner.innerText = 'You Win!'
-  } else if (compScore == 10) {
-    winner.innerText = 'You Lose!'
-  }
+  
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
@@ -64,19 +64,17 @@ function playPaper(playerSelection, computerSelection)  {
 function playScissors(playerSelection, computerSelection)  {
   playerSelection = 'scissors';
   computerSelection = getComputerChoice();
-  if (computerSelection === 'paper')  {
+  if (playerScore == 10)  {
+    winner.innerText = 'You Win!'
+  } else if (compScore == 10) {
+    winner.innerText = 'You Lose!'
+  }else if (computerSelection === 'paper')  {
       ++playerScore;
     } else if (computerSelection === 'rock')  {
         return ++compScore;
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
-
-  if (playerScore == 10)  {
-    winner.innerText = 'You Win!'
-  } else if (compScore == 10) {
-    winner.innerText = 'You Lose!'
-  }
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
