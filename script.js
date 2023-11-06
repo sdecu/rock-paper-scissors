@@ -4,16 +4,6 @@ create function for single round of rps with 2 parameters: playerSelection, comp
 and returns statement for lose or win
 make playerSelection caseINsensitive
 write funciont called game()to run 5 rounds of rps to determine winner */
-const rock = document.createElement('button');
-const paper = document.createElement('button');
-const scissors = document.createElement('button');
-
-rock.textContent = 'rock';
-paper.textContent = 'paper';
-scissors.textContent = 'scissors';
-
-document.body.append(rock, paper, scissors);
-document.body.style.backgroundColor = 'dimgrey';
 
 
 function getComputerChoice()  {
@@ -34,7 +24,7 @@ let playerScore = 0;
 let compScore = 0;
 
 function playRound(playerSelection, computerSelection)  {
-  playerSelection = getPlayerSelection();
+  //playerSelection = getPlayerSelection();
   computerSelection = getComputerChoice();
   if (playerSelection === 'rock' && computerSelection === 'scissors' || 
   playerSelection === 'scissors' && computerSelection === 'paper' || 
@@ -49,6 +39,20 @@ function playRound(playerSelection, computerSelection)  {
       } else return 'invalid input'
 }
 
+const rock = document.createElement('button');
+const paper = document.createElement('button');
+const scissors = document.createElement('button');
+
+rock.textContent = 'rock';
+paper.textContent = 'paper';
+scissors.textContent = 'scissors';
+
+document.body.append(rock, paper, scissors);
+document.body.style.backgroundColor = 'dimgrey';
+
+rock.addEventListener('click', playRound);
+paper.addEventListener('click', playRound);
+scissors.addEventListener('click', playRound);
 
 /*function game()  {
   console.log(playRound());
@@ -67,5 +71,4 @@ function playRound(playerSelection, computerSelection)  {
   */
 
 
-console.log(game())
 // input on html and playerresult = documentqueryselector instead of prompt??????
