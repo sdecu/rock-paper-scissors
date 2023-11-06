@@ -27,12 +27,17 @@ function playRock(playerSelection, computerSelection)  {
   playerSelection = 'rock';
   computerSelection = getComputerChoice();
   if (computerSelection === 'scissors')  {
-      ++playerScore && console.log('win');
+      ++playerScore;
     } else if (computerSelection === 'paper')  {
-         ++compScore && console.log('lose');
+         ++compScore;
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
+  if (playerScore == 10)  {
+    winner.innerText = 'You Win!'
+  } else if (compScore == 10) {
+    winner.innerText = 'You Lose!'
+  }
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
@@ -41,12 +46,17 @@ function playPaper(playerSelection, computerSelection)  {
   playerSelection = 'paper';
   computerSelection = getComputerChoice();
   if (computerSelection === 'rock')  {
-      ++playerScore && console.log('win');
+      ++playerScore;
     } else if (computerSelection === 'scissors')  {
-        ++compScore && console.log('lose');
+        ++compScore 
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
+  if (playerScore == 10)  {
+    winner.innerText = 'You Win!'
+  } else if (compScore == 10) {
+    winner.innerText = 'You Lose!'
+  }
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
@@ -55,12 +65,18 @@ function playScissors(playerSelection, computerSelection)  {
   playerSelection = 'scissors';
   computerSelection = getComputerChoice();
   if (computerSelection === 'paper')  {
-      ++playerScore && console.log('win');
+      ++playerScore;
     } else if (computerSelection === 'rock')  {
-        return ++compScore && console.log('lose');
+        return ++compScore;
       } else if   (playerSelection == computerSelection)  {
         console.log('tie')
       }
+
+  if (playerScore == 10)  {
+    winner.innerText = 'You Win!'
+  } else if (compScore == 10) {
+    winner.innerText = 'You Lose!'
+  }
   player.textContent = `${playerScore}`;
   cpu.textContent = `${compScore}`;
 }
@@ -68,8 +84,10 @@ function playScissors(playerSelection, computerSelection)  {
 const rock = document.createElement('button');
 const paper = document.createElement('button');
 const scissors = document.createElement('button');
+const div = document.querySelector('div');
+const winner = document.createElement('h1');
 const player = document.querySelector('#player');
-const cpu = document.querySelector('#cpu')
+const cpu = document.querySelector('#cpu');
 
 rock.textContent = 'rock';
 paper.textContent = 'paper';
@@ -78,6 +96,7 @@ player.textContent = `${playerScore}`;
 cpu.textContent = `${compScore}`;
 
 document.body.prepend(rock, paper, scissors);
+div.append(winner);
 document.body.style.backgroundColor = 'dimgrey';
 document.body.style.color = 'white'
 
